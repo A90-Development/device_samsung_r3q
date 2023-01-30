@@ -77,6 +77,9 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     spu \
     omr
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2022-07-01
+
 # SELinux
 include device/qcom/sepolicy/SEPolicy.mk
 include device/samsung_slsi/sepolicy.mk
