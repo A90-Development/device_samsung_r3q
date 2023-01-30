@@ -41,6 +41,9 @@ QCOM_BOARD_PLATFORMS += msmnile
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# FM
+BOARD_HAVE_QCOM_FM := true
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
