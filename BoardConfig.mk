@@ -120,6 +120,7 @@ BOARD_ROOT_EXTRA_FOLDERS := \
 VENDOR_SECURITY_PATCH := 2022-07-01
 
 # SELinux
+SELINUX_IGNORE_NEVERALLOWS := true
 include device/qcom/sepolicy/SEPolicy.mk
 include device/samsung_slsi/sepolicy/sepolicy.mk
 
