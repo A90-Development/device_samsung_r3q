@@ -49,6 +49,20 @@ TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
+# Root
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+BOARD_ROOT_EXTRA_FOLDERS := \
+    carrier \
+    dqmdbg \
+    efs \
+    keydata \
+    keyrefuge \
+    metadata \
+    optics \
+    prism \
+    spu \
+    omr
+
 # SELinux
 include device/qcom/sepolicy/SEPolicy.mk
 include device/samsung_slsi/sepolicy.mk
