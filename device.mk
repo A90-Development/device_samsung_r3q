@@ -167,6 +167,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-service.samsung \
+    libkeymaster4_1support.vendor:64
+
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.samsung
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -277,6 +286,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml
 
 # Power
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.samsung-libperfmgr
+
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/config/powerhint.json:$(TARGET_COPY_OUT_PRODUCT)/vendor_overlay/$(PLATFORM_VNDK_VERSION)/etc/powerhint.json
 
@@ -337,6 +349,10 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.1.vendor \
     android.hardware.secure_element@1.0.vendor
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors-service.samsung-multihal
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -356,6 +372,22 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@2.0-service.samsung
+
+# Touch HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.samsung
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.samsung
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.samsung
 
 # VNDK
 PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := strict
