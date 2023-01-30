@@ -41,6 +41,10 @@ QCOM_BOARD_PLATFORMS += msmnile
 # Display
 TARGET_SCREEN_DENSITY := 440
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
+
 # Kernel
 TARGET_KERNEL_CONFIG := a90_defconfig
 
