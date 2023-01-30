@@ -244,7 +244,7 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # Shipping API level
-PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_SHIPPING_API_LEVEL := 28
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
