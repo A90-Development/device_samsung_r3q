@@ -123,5 +123,16 @@ BOARD_AVB_RECOVERY_ALGORITHM := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
+## Wi-Fi
+BOARD_WLAN_DEVICE                             := slsi
+BOARD_WPA_SUPPLICANT_DRIVER                   := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB              := lib_driver_cmd_slsi
+BOARD_HOSTAPD_DRIVER                          := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB                     := lib_driver_cmd_slsi
+WIFI_HIDL_FEATURE_DUAL_INTERFACE              := true
+WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+WPA_SUPPLICANT_VERSION                        := VER_0_8_X
+
+
 # Inherit from the proprietary version
 include vendor/samsung/r3q/BoardConfigVendor.mk
