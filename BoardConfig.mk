@@ -49,6 +49,15 @@ TARGET_COPY_OUT_PRODUCT := system/product
 TARGET_COPY_OUT_SYSTEM_EXT := system/system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 
+# SELinux
+include device/qcom/sepolicy/SEPolicy.mk
+include device/samsung_slsi/sepolicy.mk
+
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
+    $(COMMON_PATH)/sepolicy/private
+
+BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
