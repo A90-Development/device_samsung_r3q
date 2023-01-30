@@ -12,6 +12,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Properties
+include $(LOCAL_PATH)/vendor_prop.mk
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
