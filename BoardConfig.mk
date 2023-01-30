@@ -121,7 +121,7 @@ VENDOR_SECURITY_PATCH := 2022-07-01
 
 # SELinux
 include device/qcom/sepolicy/SEPolicy.mk
-include device/samsung_slsi/sepolicy.mk
+include device/samsung_slsi/sepolicy/sepolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     $(COMMON_PATH)/sepolicy/private
