@@ -38,9 +38,6 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msmnile
 QCOM_BOARD_PLATFORMS += msmnile
 
-## Bluetooth
-BOARD_HAVE_BLUETOOTH_SLSI := true
-
 # Display
 TARGET_SCREEN_DENSITY := 440
 TARGET_DISABLED_UBWC := true
@@ -122,7 +119,6 @@ VENDOR_SECURITY_PATCH := 2022-07-01
 # SELinux
 SELINUX_IGNORE_NEVERALLOWS := true
 include device/qcom/sepolicy/SEPolicy.mk
-include device/samsung_slsi/sepolicy/sepolicy.mk
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     $(COMMON_PATH)/sepolicy/private
@@ -142,15 +138,15 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 ## Wi-Fi
-BOARD_WLAN_DEVICE                             := slsi
-BOARD_WPA_SUPPLICANT_DRIVER                   := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB              := lib_driver_cmd_slsi
-BOARD_HOSTAPD_DRIVER                          := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB                     := lib_driver_cmd_slsi
-WIFI_HIDL_FEATURE_DUAL_INTERFACE              := true
+BOARD_WLAN_DEVICE := qcwcn
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WIFI_DRIVER_DEFAULT := qca_cld3
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
-WPA_SUPPLICANT_VERSION                        := VER_0_8_X
-
+WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 include vendor/samsung/r3q/BoardConfigVendor.mk
