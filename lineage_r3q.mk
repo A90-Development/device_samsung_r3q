@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Inherit from vayu device
-$(call inherit-product, device/xiaomi/r3q/device.mk)
+$(call inherit-product, device/samsung/r3q/device.mk)
 
 PRODUCT_NAME := lineage_r3q
 PRODUCT_DEVICE := r3q
