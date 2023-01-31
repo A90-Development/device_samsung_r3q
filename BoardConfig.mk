@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/samsung/r31
+DEVICE_PATH := device/samsung/r3q
 
 BUILD_BROKEN_DUP_RULES := true
 
